@@ -250,7 +250,8 @@ public class SwiftFlutterSharingIntentPlugin: NSObject, FlutterStreamHandler, Fl
             let encodedData = try JSONDecoder().decode([SharingFile].self, from: data)
             return encodedData
         } catch {
-            fatalError(error.localizedDescription)
+            print("Decoding error:",error.localizedDescription)
+            return []
         }
 
     }
